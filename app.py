@@ -46,12 +46,15 @@ def mediaFinal():
     # aqui é a soma de todas as notas do array
     for disciplina, nota in disciplinas:
         soma += nota
+
     # dai aqui é a condição, se o tamanho do array disciplinas for maior que 0 ele executa a media final
     if len(disciplinas)>0:
         mediaF = soma/len(disciplinas)
     else:
         mediaF = 0
-    
+
+
+    # outra condição para saber se o aluno vai ser aprovado ou nao
     if mediaF >= mediaDesejada:
         labelAprovado.config(text="APROVADO")
     else:
@@ -74,11 +77,11 @@ def limpar():
     print(labelsDinamicas)
     labelsDinamicas.clear()
 
-    labelMediaDesejada.config(text="Não inserido")  # Média inicial (pode ser alterada conforme necessário)
+    labelMediaDesejada.config(text="Não inserido")  
     labelMediaF.config(text="0.00")
     labelAprovado.config(text="")
 
-
+# 
 janela = tk.Tk()
 
 janela.title("Desempenho Academico")
@@ -164,6 +167,7 @@ entradaNota.pack(pady=10,padx=10)
 # Botão 
 botao = tk.Button(frame3, text="Adicionar", command=adicionarDisciplina,fg="black", bg="yellow", font=("Arial", 16),height=1, width=20)
 botao.pack(pady=10,padx=10)
+
 
 
 # divisor
